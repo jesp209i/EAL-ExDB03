@@ -1,0 +1,62 @@
+/*
+Brug *MIN* database på skolens system
+***************/
+USE DB2017_C13;
+
+/*
+	1.	SEMINAR(SeminarID, SeminarDate, Location, SeminarTitle)
+	4.	SEMINAR_CUSTOMER(SeminarID, CustomerID)
+	3.	CUSTOMER(CustomerID, FirstName, LastName, Street, Zip)
+	2.	ZIP_CITY(Zip, City)
+
+*/
+
+/*
+	SEMINAR(SeminarID, SeminarDate, Location, SeminarTitle)
+*/
+	CREATE TABLE SEMINAR(
+		SeminarID INT NOT NULL,
+		SeminarDate DATETIME2 NOT NULL,
+		Location NVARCHAR NOT NULL,
+		SeminarTitle NVARCHAR NOT NULL,
+		CONSTRAINT SEMINAR_PK PRIMARY KEY (SeminarID)
+	);
+
+
+/*
+	ZIP_CITY(Zip, City)
+*/
+	CREATE TABLE ZIP_CITY(
+		Zip INT NOT NULL,
+		City NVARCHAR NOT NULL,
+		CONSTRAINT ZIP_CITY_PK PRIMARY KEY (Zip)
+	);
+
+/*
+	CUSTOMER(CustomerID, FirstName, LastName, Street, Zip)
+*/
+	CREATE TABLE CUSTOMER(
+		CustomerID INT NOT NULL,
+		FirstName NVARCHAR NOT NULL,
+		LastName NVARCHAR NOT NULL,
+		Street NVARCHAR NOT NULL,
+		Zip INT NOT NULL,
+		CONSTRAINT CUSTOMER_PK PRIMARY KEY(CustomerID),
+		CONSTRAINT CUSTOMER_ZIP_FK FOREIGN KEY (Zip)
+			REFERENCES ZIP_CITY(Zip)
+			ON DELETE NO ACTION
+			ON UPDATE NO ACTION
+	);
+
+/*
+	SEMINAR_CUSTOMER(SeminarID, CustomerID)
+*/
+	CREATE TABLE SEMINAR_CUSTOMER(
+		SeminarID INT NOT NULL,
+		CustomerID INT NOT NULL,
+		CONSTRAINT SEMINAR_CUSTOMER_PK PRIMARY KEY (SeminarID, CustomerID),
+		CONSTRAINT SEMINAR_FK FOREIGN KEY (SeminarID)
+			REFERENCES SEMINAR (SeminarID),
+		CONSTRAINT CUSTOMER_FK FOREIGN KEY (CustomerID)
+			REFERENCES CUSTOMER (CustomerID)
+	);
