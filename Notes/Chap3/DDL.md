@@ -1,9 +1,9 @@
 # Kapitel 3 Om DDL
 Indhold:
-- [Mest almindelige datatyper i DBMS'er](#Mest almindelige datatyper i DBMS'er)
-- [Oprette tabeller](#Oprette tabeller)
-- [Oprette tabeller med Table Constraints](#Oprette tabeller med Table Constraints)
-- [Table Constraints og Foreign Key(s)](#Table Constraints og Foreign Key(s))
+- [Mest almindelige datatyper i DBMS'er](#mest-almindelige-datatyper-i-DBMSer)
+- [Oprette tabeller](#oprette-tabeller)
+- [Oprette tabeller med Table Constraints](#oprette-tabeller-med-table-constraints)
+- [Table Constraints og Foreign Key(s)](#table-constraints-og-foreign-keys)
 ## Mest almindelige datatyper i DBMS'er
 - Side 145 -> 146 SQl Server 2014
 - Side 147 -> 148 Oracle Database Express Edition 11g Release 2
