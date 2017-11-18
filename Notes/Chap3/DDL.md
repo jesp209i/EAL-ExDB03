@@ -1,4 +1,4 @@
-# Kapitel 3 Om DLL
+# Kapitel 3 Om DDL
 #### Mest almindelige datatyper i DBMS'er
 - Side 145 -> 146 SQl Server 2014
 - Side 147 -> 148 Oracle Database Express Edition 11g Release 2
