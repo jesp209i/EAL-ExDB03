@@ -1,10 +1,15 @@
 # Kapitel 3 Om DDL
-#### Mest almindelige datatyper i DBMS'er
+Indhold:
+- [Mest almindelige datatyper i DBMS'er](#Mest almindelige datatyper i DBMS'er)
+- [Oprette tabeller](#Oprette tabeller)
+- [Oprette tabeller med Table Constraints](#Oprette tabeller med Table Constraints)
+- [Table Constraints og Foreign Key(s)](#Table Constraints og Foreign Key(s))
+## Mest almindelige datatyper i DBMS'er
 - Side 145 -> 146 SQl Server 2014
 - Side 147 -> 148 Oracle Database Express Edition 11g Release 2
 - Side 148 -> 149 Mysql 5.6
 
-#### Oprette tabeller
+### Oprette tabeller
 Side 143
 
 SQL eksempelkode:
@@ -17,7 +22,7 @@ CREATE TABLE NEWTABLENAME (
   ...
 );
 ```
-Under OptionalConstraint kan man bruge følgende keywords:
+Under *OptionalConstraint* kan man bruge følgende keywords:
 - PRIMARY KEY
 - FOREIGN KEY
 - NULL
@@ -38,7 +43,8 @@ CREATE TABLE EMPLOYEE(
 );
 ```
 Bemærk at det kun er muligt at definere en tabel til at være primær nøgle.
-#### Oprette tabeller med Table Constraints
+
+### Oprette tabeller med Table Constraints
 fra side 150
 
 Bemærk følgende notation:
@@ -59,3 +65,26 @@ CREATE TABLE NEWTABLE(
 );
 ```
 Bemærk nyt keyword **IDENTITY (M,N)**. Ifølge bogen side 151 er det på denne måde at MS SQL Server definerer surrogat nøgler. Keyword viser at nøglen starter ved **M** og stiger **N** hver gang der tilføjes en række.
+
+### Table Constraints og Foreign Key(s)
+```SQL
+CREATE TABLE NEWTABLE(
+  TableID         INT         NOT NULL IDENTITY (1, 1),
+  OtherTableID    INT         NOT NULL,
+  ...flere kolonner defineres...
+  CONSTRAINT NEWTABLE_PK PRIMARY KEY(TableID),
+  CONSTRAINT NEWTABLE_OTHERTABLE_FK FOREIGN KEY (OtherTableID)
+    REFERENCES OTHERTABLE(OtherTableID)
+      ON UPDATE CASCADE
+      ON DELETE NO ACTION,
+);
+```
+De fire nedereste linjer er de vigtigste. Her bliver relationen til tabellen **OTHERTABLE** oprettet med henvisning til kolonnen *OtherTableID*.
+
+Vær desuden opmærksom på følgende struktur:
+- ON UPDATE
+  - CASCADE
+  - NO ACTION
+- ON DELETE
+  - CASCADE
+  - NO ACTION
