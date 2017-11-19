@@ -33,7 +33,7 @@ AS keyword
 - AVG()
 - SUM()
 
-##Indbyggede funktioner og grupperinger side 175
+## Indbyggede funktioner og grupperinger side 175
 GROUP BY
 
 HAVING
