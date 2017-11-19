@@ -6,7 +6,8 @@ Side 136:
 - Data manipulation language (DML)
   - udtryk som bruges til at forespørge, indsætte, opdatere og slette data 
     - [INSERT](https://github.com/jesp209i/EAL-ExDBxx/edit/master/Notes/Chap3/insert.md)
-    - [SELECT](https://github.com/jesp209i/EAL-ExDBxx/edit/master/Notes/Chap3/select.md)
+    - [SELECT fra en tabel](https://github.com/jesp209i/EAL-ExDBxx/edit/master/Notes/Chap3/select.md)
+    - [SELECT fra flere tabeller](https://github.com/jesp209i/EAL-ExDBxx/edit/master/Notes/Chap3/select2.md)
     - [UPDATE](https://github.com/jesp209i/EAL-ExDBxx/edit/master/Notes/Chap3/update.md)
     - [DELETE](https://github.com/jesp209i/EAL-ExDBxx/edit/master/Notes/Chap3/delete.md)
 
