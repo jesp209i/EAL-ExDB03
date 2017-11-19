@@ -1,4 +1,4 @@
-# SELECT
+# SELECT fra en tabel
 Fra side 160 til 191
 
 ## SELECT/FROM/WHERE side 160
