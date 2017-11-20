@@ -93,6 +93,9 @@ Vær desuden opmærksom på følgende struktur:
   
 ## Tabelmodifikation
 - DROP TABLE side 195
+  - Fjerner data og tabel helt
 - ALTER TABLE side 196
+  - Kan ændre på strukturen på en kolonne i en tabel
 - TRUNCATE TABLE side 196
+  - Fjerner data, men bibeholder tabelstruktur
 - CHECK constraint side 196
