@@ -3,7 +3,7 @@ Fra side 160 til 191
 
 ## SELECT/FROM/WHERE side 160
 ## Læs specifikke kolonner fra een tabel side 160
-DESTINCT keyword side 163
+DISTINCT() keyword side 163
 
 ## Læs specifikke rækker fra een tabel side 163
 WHERE
