@@ -5,4 +5,4 @@
 - [Kapitel 3](/Notes/Chap3/README.md)
 
 ## Stored Procedures
-- [Første link](/Notes/StoredProcedures/README.md)
+- [tre kilder til Stored Procedures](/Notes/StoredProcedures/README.md)
