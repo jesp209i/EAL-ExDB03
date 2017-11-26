@@ -2,6 +2,7 @@
 - [Stored Procedure Basics](#stored-procedures-basics)
 - [Stored Procedures Parameters](#stored-procedures-parameters)
 - [Stored Procedure Tutorial](#stored-procedure-tutorial)
+- [Ekstra Kilde](https://www.codeproject.com/Articles/126898/Sql-Server-How-To-Write-a-Stored-Procedure-in-SQL) (externt link)
 
 ## Stored Procedure Basics
 - kilde: https://www.youtube.com/watch?v=fjNsRV4zLdc
