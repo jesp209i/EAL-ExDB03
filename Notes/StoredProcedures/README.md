@@ -48,10 +48,11 @@ BEGIN
       FilmName DESC
 END;
 ```
-Øverst bør man også have hvilken database man vil tilknytte sine Stored Procedures på:
+Øverst kan man også have hvilken database man vil tilknytte sine Stored Procedures på:
 ```SQL
-Use AdventureWorks
-Go
+-- Eksempel!
+Use AdventureWorks;
+GO
 ```
 Hvis du ikke længere har SQL'en fra tidligere kan du i `SSMS` i Object Explorer højreklikke på din Stored Procedure og vælge "Modify".
 Det ligger under: Database, tabel, programmability, System stored procedures.
