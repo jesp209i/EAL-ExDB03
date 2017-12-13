@@ -19,7 +19,7 @@ WHERE		EmployeeNumber IN
                      WHERE	Department = 'Accounting'));
 /* Fra side 179 */
 ```
-##Flere tabeller med joins
+## Flere tabeller med joins
 ```SQL
 SELECT		FirstName, LastName, HoursWorked
 FROM		EMPLOYEE, ASSIGNMENT
