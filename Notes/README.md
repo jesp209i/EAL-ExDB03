@@ -6,3 +6,6 @@
 
 ## Stored Procedures
 - [tre kilder til Stored Procedures](/Notes/StoredProcedures/README.md)
+
+## Views og Triggers
+- [fire kilder til views og triggers](/Notes/Triggers/README.md)
