@@ -105,3 +105,58 @@ Der er tre mulig candidate keys
 
 
 ## Eliminer anomalier fra multivalued dependencies (side 102)
+Eksemplet fra side 103. Se på tabellen EMPLOYEE_DEGREE:
+
+| | EmployeeName | EmployeeDegree |
+|---|---|---|
+| 1 | Chau | BS |
+| 2 | Green | BS |
+| 3 | Green | MS |
+| 4 | Green | PhD |
+| 5 | Jones | AA |
+| 6 | Jones | BA |
+
+```
+EmployeeName -->-->EmployeeDegree
+```
+Employeename multideterminerer EmployeeDegree, fordi eksempelvis navnet Green giver 3 svar.
+
+Hvis ovenstående optræder i en tabel med flere data vil der opstå anomalier. Men hvis de data som kan skrives på denne måde A-->-->B flyttes over i sin egen tabel bliver alt fint. Resultatet er en tabel med to kollonner hvis primær nøgle er en composite af de to kollonner. Når multivalued dependencies er blevet isoleret på denne måde siges tabellen at være i 4NF.
+
+Det sværeste ved multivalued dependencies er at finde dem. Når først du ved at de eksisterer i en tabel, skal de blot flyttes over i sin egen tabel. Når man støder på tabeller med sære anomalier, især anomalier der kræver at du indsætter, retter eller slettet et vilkårligt antal rækker for at opretholde den referensielle integritet, skal du undersøge om der er multivalued dependencies.
+
+# 1NF
+fra side 79:
+1. Rows contain data about an entity
+2. Columns contain data about attributes of the entity
+3. cells of the table hold a single value
+4. All entries in a column are of the same kind
+5. each column has a unique name
+5. the order of the columns are unimportant
+7. the order of the rows are unimportant
+8. no two sets of rows may hold identical sets of data values
+
+man har opnået første normalform hvis man kan svare ja til at ens tabel overholder ovenstående.
+
+# 2NF
+1. er 1NF opfyldt?
+2. alle "non-key" attributter kun kan determineres af hele primær nøglen?
+
+Hvis du svarer ja til begge spørgsmål er 2NF opfyldt.
+
+Bemærk:
+Hvis ens tabel IKKE har en Composite primær nøgle så er 2NF opfyldt ved 1NF. 
+Problemer opstår altså først hvis Primærnøglen er composite.
+
+# 3NF
+1. er 2NF opfyldt?
+2. er der nogen "non-key" attributter som determineres af andre "non-key" attributter?
+Hvis du kan svare ja til første spørgsmål og nej til andet er din tabel i 3NF.
+
+# BCNF eller 3.5NF
+1. er 3NF opfyldt?
+2. er alle determinanter også candidate keys?
+Hvis du kan svare ja til begge spørgsmål har du opnået BCNF
+
+# 4NF
+se afsnittet: "Eliminer anomalier fra multivalued dependencies" længere oppe
