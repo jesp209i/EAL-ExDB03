@@ -58,12 +58,50 @@ Null-værdier er ambivalente. Det er uklart hvorfor en værdi ikke eksisterer.
 ## Funktionelle afhængigheder og normalisering (side 92pp)
 eksemplet fra side 92:
 
+```
 CookieCost = NumberOfBoxes x $5
+NumberOfBoxes --> CookieCost
+```
+CookieCost er funktionelt afhængig af NumberOfBoxes, eller NumberOfBoxes determinerer CookieCost.
+
+eksemplet fra side 93:
+```
+CUSTOMER(_CustomerNumber_, CustomerLastName. CustomerFirstName, Phone)
+CustomerNumber --> (CustomerLastName. CustomerFirstName, Phone)
+```
+CustomerNumber determinerer CustomerLastName. CustomerFirstName og Phone.
+
+En primær nøgle kan defineres som: "en eller flere attributter som funktionelt determinerer alle de andre attributter i en tabel".
+
+I tabellen: 
+```
+EMPLOYEE(EmployeeNumber, FirstName, LastName, Department, Email, Phone)
+```
+kan man blandt andet se at:
+```
+EmployeeNumber --> (FirstName, LastName, Department, Email, Phone)
+Email --> (EmployeeNumber, FirstName, LastName, Department, Phone)
+(FirstName, LastName, Department) --> (EmployeeNumber, Email, Phone)
+
+```
+Disse tre funktionelle afhængigheder udtrykker grunden til at alle tre kandidat nøgler netop ER kandidat nøgler. Når vi skal vælge en primær nøgle, vælger vi hvilken funktionel afhængighed det giver mest mening eller er vigtigst for os.
+Der er tre mulig candidate keys
 
 ### Normalisering (side 94)
 
 ### Relationelle designprincipper (side 95)
+1. For a relation to be considered well formed, every determinant must be a candidate key.
+2. Any relation that is not well formed should be broken into two or more relations that are well formed.
 
 ### Normaliseringsprocessen (side 95)
+1. Identificer alle kandidat nøgler i tabellen.
+2. Identificer alle funktionelle afhængigheder i tabellen
+3. Undersøg determinanterne af de funktionelle afhængigheder. Hvis der er determinenter der ikke er kandidat nøgler, så er tabellen ikke "well formed". I Så fald:
+  * A. Placer kollonnerne af dem funktionelle afhængighed i sin egen nye tabel.
+  * B. Gør determinanten i den funkionelle afhængighed til primær nøglen af den nye tabel.
+  * C. Efterlad en kopi af determinanten (brugt som fremmed nøgle) i den oprindelige tabel.
+  * D. Opret en referential integrity constraint mellem den oprindelige og nye tabel.
+4. Gentag punk 3  indtil alle determinanter i alle tabeller kan fungere som kandidat nøgler.
+
 
 ## Eliminer anomalier fra multivalued dependencies (side 102)
